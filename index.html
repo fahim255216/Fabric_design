@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#2f5bea"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>Fabric Design Studio</title>
+<link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#2f5bea"><link rel="icon" href="/icon-192.png"><link rel="apple-touch-icon" href="/icon-192.png"><title>Fabric Design Studio</title>
 <style>
 :root{--bg:#f6f7f9;--pn:#fff;--bd:#dfe3e8;--tx:#1d2330;--mu:#6b7482;--ac:#2f5bea;--ok:#e8eefe;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171c;--pn:#1c2027;--bd:#2d333d;--tx:#e8ebf0;--mu:#9aa3b2;--ac:#7b9bff;--ok:#26304d;color-scheme:dark}}
@@ -176,7 +176,7 @@ $('#file').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileR
 $('#bPng').onclick=exportPng;
 addEventListener('keydown',e=>{if(/INPUT|SELECT/.test(e.target.tagName))return;if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();e.shiftKey?redo():undo()}else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){e.preventDefault();redo()}});
 addEventListener('resize',fit);
-if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));
 // start
 try{const a=JSON.parse(localStorage.getItem('fds:auto'));if(a)load(a)}catch(e){}
 $('#name').value=S.name;rpal();setTool('pencil');list();setMode('free');
